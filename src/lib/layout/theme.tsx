@@ -12,7 +12,7 @@
 'use client'
 
 import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from 'react'
-import { getPresetOrThrow, getOppositeMode, getAllIds } from './theme-registry'
+import { getPresetOrThrow, getPreset, getOppositeMode, getAllIds } from './theme-registry'
 import { useMounted } from './use-mounted'
 import type { ThemeMode, ThemePreset, ThemeTokens, ThemeContextValue } from './theme-types'
 
@@ -23,10 +23,16 @@ import './presets'
 
 const DEFAULT_PRESET = 'champagne'
 
+function getDefaultTokens(): ThemeTokens {
+  const preset = getPreset(DEFAULT_PRESET)
+  if (preset) return preset.tokens
+  return {} as ThemeTokens
+}
+
 const ThemeContext = createContext<ThemeContextValue>({
   mode: 'dark',
   preset: DEFAULT_PRESET,
-  tokens: getPresetOrThrow(DEFAULT_PRESET).tokens,
+  tokens: getDefaultTokens(),
   toggle: () => {},
   setMode: () => {},
   setPreset: () => {},

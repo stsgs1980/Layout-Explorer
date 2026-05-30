@@ -138,20 +138,6 @@ export interface ThemeContextValue {
   setPreset: (p: ThemePreset) => void
 }
 
-// ─── Theme Recommendation ────────────────────────────────────────
-
-export interface ThemeRecommendationInput {
-  /** Goal category (saas, ecommerce, blog, etc.) */
-  goal: string
-  /** Mood preference (premium, tech, playful, minimal) */
-  mood?: string
-  /** Target audience (developers, consumers, enterprise) */
-  audience?: string
-}
-
-export interface ThemeRecommendation {
-  presetId: ThemePreset
-  confidence: number    // 0-1
-  reason: string
-  mood?: string
-}
+// Theme recommendation types moved to theme-types-recommendation.ts.
+// Re-export for backward compatibility.
+export type { ThemeRecommendationInput, ThemeRecommendation } from './theme-types-recommendation'
