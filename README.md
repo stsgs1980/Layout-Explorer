@@ -2,6 +2,13 @@
 
 AI-powered layout designer — parses natural language prompts, scores 51 layout recipes, recommends themes, generates wireframe previews.
 
+
+[![Next.js](https://img.shields.io/badge/Next.js-black?style=flat-square)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-61DAFB?style=flat-square)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square)](https://www.typescriptlang.org)
+[![Tailwind_CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square)](https://tailwindcss.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+
 ## Features
 
 - **Prompt Studio** — type what you want to build, get the best layout recipe scored by goal match, content affinity, structure fit, and viewport awareness
@@ -13,7 +20,7 @@ AI-powered layout designer — parses natural language prompts, scores 51 layout
 
 ## Architecture
 
-```
+```css
 src/
 ├── app/                        # Next.js App Router
 │   ├── page.tsx                # Main page
@@ -76,13 +83,13 @@ Multi-goal mode uses weighted combination with conflict mitigation, synergy bonu
 ## Getting Started
 
 ```bash
-# Install
+## Install
 bun install
 
-# Dev server
+## Dev server
 bun run dev
 
-# Production build
+## Production build
 bun run build && bun run start
 ```
 
@@ -98,3 +105,10 @@ bun run build && bun run start
 ## Anti-Monolith Compliance
 
 All files ≤ 150 lines. No god objects. No duplicate modules. useState ≤ 3 per component. Enforced by `eslint-plugin-3a`.
+
+## License
+
+[MIT](LICENSE)
+
+---
+Built with: Next.js + React + TypeScript + Tailwind CSS
